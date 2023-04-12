@@ -22,10 +22,10 @@ def unlock(name):
     with open(vbs_file_path) as f:
         first_line = f.readline()
         # print(first_line.split(" ")) #['REM', 'D:\\\\OS', '1111\n']
-        main_folder = first_line.split(" ")[1]
+        main_folder = first_line.replace("REM ","").replace("\n","").replace("\\\\","\\")
         # old_pass = first_line.split(" ")[2].strip('\n')
 
-    shortcut_path = first_line.split(" ")[1]+".lnk"
+    shortcut_path = main_folder+".lnk"
     # lock the file/folder
     subprocess.call(["attrib", "-H", "-S", "-R", main_folder])
     subprocess.call(["attrib", "-H", "-S", "-R", vbs_file_path])
@@ -58,7 +58,7 @@ def createVBS(folder_path, password):
 
     # Define the name and contents of the VBScript file
     filename = os.path.join(home_dir, f"{folder_name}_sky9262.vbs")
-    contents = f'''REM {folder_path} {password}
+    contents = f'''REM {folder_path}
 Dim sInput
 sInput = InputBox("Enter the Password", "Password Required - sky9262")
 'MsgBox "You entered:" & sInput
