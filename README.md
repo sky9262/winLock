@@ -1,14 +1,16 @@
-![icon](./logo.png)
+![icon](./img/logo.png)
 # winLock
 
 This is a tiny software to lock a folder, without compression and encryption in windows. it’s super convenient and fast。
 
 
-<mark>Note: It is only for windows (not linux). </mark>
+<mark> Note: It is only for windows (not linux). </mark>
+
+[![download](./img/download-button.png)](https://github.com/sky9262/winLock/releases/download/v0.1/winLock.exe)
 
 ## Usage Demonstration
 
-![Usage](./Usage.gif)
+![Usage](./img/Usage.gif)
 ## Installation
 
 Install winLock
