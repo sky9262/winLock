@@ -1,4 +1,4 @@
-
+![icon](./logo.png)
 # winLock
 
 This is a tiny software to lock a folder, without compression and encryption in windows. it’s super convenient and fast。
