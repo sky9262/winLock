@@ -6,7 +6,7 @@ This is a tiny software to lock a folder, without compression and encryption in 
 
 <mark> Note: It is only for windows (not linux). </mark>
 
-[![download](./img/download-button.png)](https://github.com/sky9262/winLock/releases/download/v0.1/winLock.exe)
+[![download](./img/download-button.png)](https://github.com/sky9262/winLock/releases/download/v0.2/winLock.exe)
 
 ## Usage Demonstration
 
