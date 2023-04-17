@@ -82,7 +82,7 @@ def check_password():
     global password
     entered_password = password_entry.get()
     confirm_password = confirm_password_entry.get()
-    if password == "":
+    if entered_password == "" or confirm_password == "":
         messagebox.showerror("Error", "Password cannot be empty!")
     elif entered_password == confirm_password:
         password = entered_password
@@ -110,6 +110,9 @@ def refresh_buttons():
     for filename in os.listdir(os.path.expanduser("~")):
         if "sky9262" in filename:
             create_button(filename.replace("_sky9262.vbs", ""))
+    
+    hidden_folders = len(list(filter(lambda x: "sky9262" in x, os.listdir(os.path.expanduser("~")))))
+    root.geometry(f"{win_width}x{win_height + int(hidden_folders)*30}")
 
 
 def show_files():
@@ -125,11 +128,8 @@ frame.pack(padx=10, pady=10)
 
 win_width = 400
 win_height = 350
-screen_width = root.winfo_screenwidth()
-screen_height = root.winfo_screenheight()
-x = int((screen_width / 2) - (win_width / 2))
-y = int((screen_height / 2) - (win_height / 2))
-root.geometry(f"{win_width}x{win_height}+{x}+{y}")
+
+root.geometry(f"{win_width}x{win_height}")
 
 folder_path_label = tk.Label(
     root, text="Select Folder:", bg="#2c3e50", fg="#ecf0f1", font=("Arial", 12)
